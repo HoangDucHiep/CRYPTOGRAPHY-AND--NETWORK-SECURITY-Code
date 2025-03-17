@@ -1,0 +1,169 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\utils\\charextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:utils\\charextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\classicalencription\\caesarcipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:classicalencription\\caesarcipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3BD9C90-B49A-40DC-8CA9-C18ED15420F8}|..\\AtbmttTest\\AtbmttTest.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtttest\\testcaesarcipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\atbmtt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:atbmtt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:141:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CharExtensions.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Utils\\CharExtensions.cs",
+              "RelativeDocumentMoniker": "Utils\\CharExtensions.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Utils\\CharExtensions.cs",
+              "RelativeToolTip": "Utils\\CharExtensions.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T04:07:10.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CaesarCipher.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\ClassicalEncription\\CaesarCipher.cs",
+              "RelativeDocumentMoniker": "ClassicalEncription\\CaesarCipher.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\ClassicalEncription\\CaesarCipher.cs",
+              "RelativeToolTip": "ClassicalEncription\\CaesarCipher.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAuwDEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T03:36:54.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TestCaesarCipher.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\AtbmttTest\\TestCaesarCipher.cs",
+              "RelativeDocumentMoniker": "..\\AtbmttTest\\TestCaesarCipher.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\AtbmttTest\\TestCaesarCipher.cs",
+              "RelativeToolTip": "..\\AtbmttTest\\TestCaesarCipher.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAArwCoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T03:59:53.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Atbmtt.csproj",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Atbmtt.csproj",
+              "RelativeDocumentMoniker": "Atbmtt.csproj",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Atbmtt.csproj",
+              "RelativeToolTip": "Atbmtt.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-17T03:47:27.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T03:35:10.59Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 269,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

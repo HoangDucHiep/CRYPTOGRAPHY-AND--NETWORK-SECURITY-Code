@@ -1,0 +1,14 @@
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\bin\Debug\net9.0\atbmtt.exe
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\bin\Debug\net9.0\atbmtt.deps.json
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\bin\Debug\net9.0\atbmtt.runtimeconfig.json
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\bin\Debug\net9.0\atbmtt.dll
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\bin\Debug\net9.0\atbmtt.pdb
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\atbmtt.GeneratedMSBuildEditorConfig.editorconfig
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\atbmtt.AssemblyInfoInputs.cache
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\atbmtt.AssemblyInfo.cs
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\atbmtt.csproj.CoreCompileInputs.cache
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\atbmtt.dll
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\refint\atbmtt.dll
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\atbmtt.pdb
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\atbmtt.genruntimeconfig.cache
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\ref\atbmtt.dll
