@@ -3,15 +3,11 @@
   "WorkspaceRootPath": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\classicalencription\\caesarcipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:classicalencription\\caesarcipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3BD9C90-B49A-40DC-8CA9-C18ED15420F8}|..\\AtbmttTest\\AtbmttTest.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtttest\\testcaesarcipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\atbmtt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:atbmtt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3BD9C90-B49A-40DC-8CA9-C18ED15420F8}|..\\AtbmttTest\\AtbmttTest.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtttest\\testcaesarcipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\utils\\charextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -81,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "CharExtensions.cs",
               "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Utils\\CharExtensions.cs",
               "RelativeDocumentMoniker": "Utils\\CharExtensions.cs",
@@ -89,31 +85,17 @@
               "RelativeToolTip": "Utils\\CharExtensions.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAUwAgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T04:07:10.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T04:07:10.774Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CaesarCipher.cs",
-              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\ClassicalEncription\\CaesarCipher.cs",
-              "RelativeDocumentMoniker": "ClassicalEncription\\CaesarCipher.cs",
-              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\ClassicalEncription\\CaesarCipher.cs",
-              "RelativeToolTip": "ClassicalEncription\\CaesarCipher.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAkwDEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T03:36:54.414Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "TestCaesarCipher.cs",
               "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\AtbmttTest\\TestCaesarCipher.cs",
               "RelativeDocumentMoniker": "..\\AtbmttTest\\TestCaesarCipher.cs",
               "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\AtbmttTest\\TestCaesarCipher.cs",
               "RelativeToolTip": "..\\AtbmttTest\\TestCaesarCipher.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAArwCYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T03:59:53.708Z",
               "EditorCaption": ""
@@ -128,12 +110,11 @@
               "RelativeToolTip": "Atbmtt.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-17T03:47:27.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T03:47:27.841Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",

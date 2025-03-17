@@ -57,9 +57,16 @@ public class VigenereCipher
         VigenereMode mode = VigenereMode.REPEAT_KEY
     )
     {
+        return mode == VigenereMode.REPEAT_KEY
+            ? RepeatDecode(cipherText, key)
+            : AutoKeyDecode(cipherText, key);
+    }
+
+    private static string RepeatDecode(string cipherText, string key)
+    {
         StringBuilder plain = new StringBuilder();
 
-        string processedKey = ProcessKey(key, cipherText, mode);
+        string processedKey = ProcessKey(key, cipherText, VigenereMode.REPEAT_KEY);
 
         for (int i = 0; i < cipherText.Length; i++)
         {
@@ -87,6 +94,74 @@ public class VigenereCipher
         return plain.ToString();
     }
 
+    private static string AutoKeyDecode(string cipherText, string key)
+    {
+        StringBuilder plain = new StringBuilder();
+        // StringBuilder temp = new StringBuilder();
+
+        int cIndex = 0;
+        int cipherLength = cipherText.Length;
+
+        while (cIndex < cipherLength)
+        {
+            string restoredKey = autoKeyRetoreKey(key + plain.ToString(), cipherText);
+            int restoredKeyLength = restoredKey.Length;
+
+            for (; cIndex < restoredKeyLength; cIndex++)
+            {
+                char currentCipherChar = cipherText[cIndex];
+                char currentKeyChar = restoredKey[cIndex];
+                if (currentCipherChar.IsLetter())
+                {
+                    char cipherBaseChar = char.IsUpper(currentCipherChar) ? 'A' : 'a';
+                    char keyBaseChar = char.IsUpper(currentKeyChar) ? 'A' : 'a';
+
+                    char decoded = (char)(
+                        ((currentCipherChar - cipherBaseChar) - (currentKeyChar - keyBaseChar) + 26)
+                            % 26
+                        + cipherBaseChar
+                    );
+
+                    plain.Append(decoded);
+                }
+                else
+                {
+                    plain.Append(currentCipherChar);
+                }
+            }
+        }
+
+
+        return plain.ToString();
+    }
+
+    public static string autoKeyRetoreKey(string key, string cipherText)
+    {
+        StringBuilder result = new();
+        int keyLength = key.Length;
+        int cipherLength = cipherText.Length;
+
+        int i = 0;
+        int j = 0;
+
+        while (i < keyLength && j < cipherLength)
+        {
+            if (!cipherText[j].IsLetter())
+            {
+                result.Append(cipherText[j]);
+            }
+            else
+            {
+                result.Append(key[i]);
+                do i++;
+                while (i < keyLength && !key[i].IsLetter());
+            }
+            j++;
+        }
+
+        return result.ToString();
+    }
+
     private static string ProcessKey(string key, string plainText, VigenereMode mode)
     {
         return mode == VigenereMode.REPEAT_KEY
@@ -104,7 +179,7 @@ public class VigenereCipher
 
         while (i < plainTextLength)
         {
-            if (plainText[i] == ' ' || !plainText[i].IsLetter())
+            if (plainText.Length > 0 && (plainText[i] == ' ' || !plainText[i].IsLetter()))
             {
                 result.Append(plainText[i]);
                 i++;
@@ -130,7 +205,7 @@ public class VigenereCipher
 
         while (i < keyLength)
         {
-            if (plainText[j] == ' ' || !plainText[j].IsLetter())
+            if (plainText.Length > 0 && !plainText[j].IsLetter())
             {
                 result.Append(' ');
             }
@@ -145,7 +220,7 @@ public class VigenereCipher
         i = 0;
         while (j < plainTextLength)
         {
-            if (plainText[j] == ' ' || !plainText[j].IsLetter())
+            if (!plainText[j].IsLetter())
             {
                 result.Append(plainText[j]);
             }
@@ -153,7 +228,7 @@ public class VigenereCipher
             {
                 result.Append(plainText[i % plainTextLength]);
                 do i++;
-                while (!plainText[i].IsLetter());
+                while (i < plainTextLength && !plainText[i].IsLetter());
             }
             j++;
         }

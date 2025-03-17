@@ -258,3 +258,4 @@ D:\University\AnToanBaoMatTT\THUCHANH\AtbmttTest\obj\Debug\net9.0\refint\AtbmttT
 D:\University\AnToanBaoMatTT\THUCHANH\AtbmttTest\obj\Debug\net9.0\AtbmttTest.pdb
 D:\University\AnToanBaoMatTT\THUCHANH\AtbmttTest\obj\Debug\net9.0\AtbmttTest.genruntimeconfig.cache
 D:\University\AnToanBaoMatTT\THUCHANH\AtbmttTest\obj\Debug\net9.0\ref\AtbmttTest.dll
+D:\University\AnToanBaoMatTT\THUCHANH\AtbmttTest\obj\Debug\net9.0\AtbmttTest.sourcelink.json

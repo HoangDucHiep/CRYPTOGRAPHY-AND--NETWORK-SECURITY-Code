@@ -12,3 +12,4 @@ D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\refint\atbmtt.dll
 D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\atbmtt.pdb
 D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\atbmtt.genruntimeconfig.cache
 D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\ref\atbmtt.dll
+D:\University\AnToanBaoMatTT\THUCHANH\atbmtt\obj\Debug\net9.0\Atbmtt.sourcelink.json

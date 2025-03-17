@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Atbmtt.ClassicalEncription;
+
+Console.WriteLine(
+    VigenereCipher.Decode(
+        "Vyc fnqkd iveqv hyy aiicx csnl 13 xprm ysxd.",
+        "cryptii",
+        VigenereMode.AUTOKEY
+    )
+);

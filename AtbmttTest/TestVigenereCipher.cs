@@ -51,6 +51,16 @@ namespace AtbmttTest
         }
 
         [TestMethod]
+        public void Test_VigenereCipher_Encode_Repeat5()
+        {
+            string plainText = "asdhHK 123asldk SDJ123jSD dasd asdAS@$d123123";
+            string key = "longcoMpLicAtEDpROvJpkEy";
+            string expected = "lgqnJY 123mhwlm SWN123mHU rvbs kwbLG@$q123123";
+            string actual = VigenereCipher.Encode(plainText, key, VigenereMode.REPEAT_KEY);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void Test_VigenereCipher_Encode_Autokey1()
         {
             string plainText = "The quick brown fox jumps over 13 lazy dogs.";
@@ -90,6 +100,16 @@ namespace AtbmttTest
             string key = "ThisIsKey";
             string expected =
                 "Evzwu azwsx rfpaz han mpse, qffaxcfimwse shkimlwmeg htxb. Sgvrgr nwfmsqs lviixm sjse lufzr. Ekrxdb xojse. Pym facaas pufgewm xwaamwrow tx zazvjm vml baxgcjlmfi mfgnva, rnlosgnv jvdaeyeoj dcv. Lqhpw igue isymu, kftdngtmk hpv, gmntifgiufyp py, ckilyoq uoxj, wxu. Hgbfi ugrerkflt oofke goil qnae. Dehmu trlq mifxq, uvlrpcdeo avt, nrqbfeo rpc, gcbjymnxg";
+            string actual = VigenereCipher.Encode(plainText, key, VigenereMode.AUTOKEY);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_VigenereCipher_Encode_Autokey5()
+        {
+            string plainText = "asdhHK 123asldk SDJ123jSD dasd asdAS@$d123123";
+            string key = "longcoMpLicAtEDpROvJpkEy";
+            string expected = "lgqnJY 123mhwlm SWN123mHU rvbs kwbAK@$g123123";
             string actual = VigenereCipher.Encode(plainText, key, VigenereMode.AUTOKEY);
             Assert.AreEqual(expected, actual);
         }
@@ -141,6 +161,16 @@ namespace AtbmttTest
             string actual = VigenereCipher.Decode(cipherText, key, VigenereMode.REPEAT_KEY);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Test_VigenereCipher_Decode_Repeat5()
+        {
+            string cipherText = "lgqnJY 123mhwlm SWN123mHU rvbs kwbAK@$g123123";
+            string key = "longcoMpLicAtEDpROvJpkEy";
+            string expected = "asdhHK 123asldk SDJ123jSD dasd asdPW@$t123123";
+            string actual = VigenereCipher.Decode(cipherText, key, VigenereMode.REPEAT_KEY);
+            Assert.AreEqual(expected, actual);
+        }
         #endregion
 
         #region AUTOKEY
@@ -184,6 +214,16 @@ namespace AtbmttTest
             string key = "ThisIsKey";
             string expected =
                 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate";
+            string actual = VigenereCipher.Decode(cipherText, key, VigenereMode.AUTOKEY);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_VigenereCipher_Decode_Autokey5()
+        {
+            string cipherText = "lgqnJY 123mhwlm SWN123mHU rvbs kwbAK@$g123123";
+            string key = "longcoMpLicAtEDpROvJpkEy";
+            string expected = "asdhHK 123asldk SDJ123jSD dasd asdAS@$d123123";
             string actual = VigenereCipher.Decode(cipherText, key, VigenereMode.AUTOKEY);
             Assert.AreEqual(expected, actual);
         }
