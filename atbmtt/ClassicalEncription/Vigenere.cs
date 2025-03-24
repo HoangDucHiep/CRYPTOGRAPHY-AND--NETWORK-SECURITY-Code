@@ -4,22 +4,6 @@ using Atbmtt.Utils;
 namespace Atbmtt.ClassicalEncription;
 
 /// <summary>
-/// Specifies the mode of operation for the Vigenere cipher.
-/// </summary>
-public enum VigenereMode
-{
-    /// <summary>
-    /// Uses the key repeatedly to encrypt/decrypt the entire message.
-    /// </summary>
-    REPEAT_KEY,
-
-    /// <summary>
-    /// Uses the key concatenated with the plaintext as the encryption key.
-    /// </summary>
-    AUTOKEY,
-}
-
-/// <summary>
 /// Provides methods for encrypting and decrypting text using the Vigenere cipher.
 /// </summary>
 public class VigenereCipher
@@ -314,7 +298,6 @@ public class VigenereCipher
         }
         return true;
     }
-
 
     /// <summary>
     /// Decodes a character using the Vigenere cipher.

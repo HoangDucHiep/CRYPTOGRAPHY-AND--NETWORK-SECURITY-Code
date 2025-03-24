@@ -9,7 +9,7 @@ namespace AtbmttTest
         [TestMethod]
         public void Test_Default_Alphabet_LowerCase()
         {
-            Alphabet alphabet = new Alphabet();
+            CustomAlphabet alphabet = new CustomAlphabet();
             string actual = alphabet.GetAlphabet();
             string expected = "abcdefghijklmnopqrstuvwxyz";
             Assert.AreEqual(expected, actual);
@@ -18,7 +18,7 @@ namespace AtbmttTest
         [TestMethod]
         public void Test_Default_Alphabet_UpperCase()
         {
-            Alphabet alphabet = new Alphabet();
+            CustomAlphabet alphabet = new CustomAlphabet();
             string actual = alphabet.GetAlphabet(true);
             string expected = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             Assert.AreEqual(expected, actual);
@@ -27,7 +27,7 @@ namespace AtbmttTest
         [TestMethod]
         public void Test_Vietnamese_Alphabet_LowerCase()
         {
-            Alphabet alphabet = new Alphabet("aăâbcdđeêghiklmnoôơpqrstuưvxy");
+            CustomAlphabet alphabet = new CustomAlphabet("aăâbcdđeêghiklmnoôơpqrstuưvxy");
             string actual = alphabet.GetAlphabet();
             string expected = "aăâbcdđeêghiklmnoôơpqrstuưvxy";
             Assert.AreEqual(expected, actual);
@@ -36,26 +36,25 @@ namespace AtbmttTest
         [TestMethod]
         public void Test_Vietnamese_Alphabet_UpperCase()
         {
-            Alphabet alphabet = new Alphabet("aăâbcdđeêghiklmnoôơpqrstuưvxy");
+            CustomAlphabet alphabet = new CustomAlphabet("aăâbcdđeêghiklmnoôơpqrstuưvxy");
             string actual = alphabet.GetAlphabet(true);
             string expected = "AĂÂBCDĐEÊGHIKLMNOÔƠPQRSTUƯVXY";
             Assert.AreEqual(expected, actual);
         }
 
-
         [TestMethod]
         public void Test_Custom_Alphabet_IsLower()
         {
-            Alphabet alphabet = new Alphabet("abcשלוםÂĂƯ");
+            CustomAlphabet alphabet = new CustomAlphabet("abcשלוםÂĂƯ");
             string actual = alphabet.GetAlphabet();
-            string expected = "abcשלוםÂĂƯ";
+            string expected = "abcשלוםâăư";
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void Test_Custom_Alphabet_IsUpper()
         {
-            Alphabet alphabet = new Alphabet("abcשלוםÂĂƯ");
+            CustomAlphabet alphabet = new CustomAlphabet("abcשלוםÂĂƯ");
             string actual = alphabet.GetAlphabet(true);
             string expected = "ABCשלוםÂĂƯ";
             Assert.AreEqual(expected, actual);
@@ -64,8 +63,8 @@ namespace AtbmttTest
         [TestMethod]
         public void Test_Uppercase_Char()
         {
-            Alphabet alphabet = new Alphabet("aăâbcdđeêghiklmnoôơpqrstuưvxy");
-            char actual = alphabet.GetUpperChar('á');
+            CustomAlphabet alphabet = new CustomAlphabet("aăâbcdđeêghiklmnoôơpqrstuưvxy");
+            char actual = alphabet.GetUpperInvariant('á');
             char expected = 'Á';
             Assert.AreEqual(expected, actual);
         }
@@ -73,28 +72,37 @@ namespace AtbmttTest
         [TestMethod]
         public void Test_Lowercase_Char()
         {
-            Alphabet alphabet = new Alphabet("aăâbcdđeêghiklmnoôơpqrstuưvxy");
-            char actual = alphabet.GetLowerChar('Á');
+            CustomAlphabet alphabet = new CustomAlphabet("aăâbcdđeêghiklmnoôơpqrstuưvxy");
+            char actual = alphabet.GetLowerInvariant('Á');
             char expected = 'á';
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Test_Lowercase_String()
+        public void Test_Contains_Char1()
         {
-            Alphabet alphabet = new Alphabet("aăâbcdđeêghiklmnoôơpqrstuưvxy");
-            string actual = alphabet.GetLowerString("ÁBCD");
-            string expected = "ábcd";
-            Assert.AreEqual(expected, actual.ToLowerInvariant());
+            CustomAlphabet alphabet = new CustomAlphabet("aăâbdđeêghiklmnoôơpqrstuưvxy");
+            bool actual = alphabet.Contains('c');
+            bool expected = false;
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Test_Uppercase_String()
+        public void Test_Contains_Char2()
         {
-            Alphabet alphabet = new Alphabet("aăâbcdđeêghiklmnoôơpqrstuưvxy");
-            string actual = alphabet.GetUpperString("áBcd");
-            string expected = "ÁBCD";
-            Assert.AreEqual(expected, actual.ToUpperInvariant());
+            CustomAlphabet alphabet = new CustomAlphabet("aăâbdđeêghiklmnoôơpqrstuưvxy");
+            bool actual = alphabet.Contains('C');
+            bool expected = false;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_Contains_Char3()
+        {
+            CustomAlphabet alphabet = new CustomAlphabet("aăâbCdđeêghiklmnoôơpqrstuưvxy");
+            bool actual = alphabet.Contains('c');
+            bool expected = true;
+            Assert.AreEqual(expected, actual);
         }
     }
 }
