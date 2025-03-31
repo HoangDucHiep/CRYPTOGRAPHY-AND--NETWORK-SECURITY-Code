@@ -49,6 +49,48 @@ public class ColumnarTransposition
         return result.ToString();
     }
 
+    public static string Decrypt(string cipherText, string key)
+    {
+        Dictionary<int, int> orderMap = ParseKey(key);
+        int columns = key.Length;
+
+        string removedSpace = cipherText.Replace(" ", "");
+
+        if (removedSpace.Length % columns != 0)
+        {
+            throw new ArgumentException("Ciphertext length must be divisible by key length.");
+        }
+
+        int rows = (int)Math.Ceiling((double)removedSpace.Length / columns);
+
+        char[,] matrix = new char[rows, columns];
+
+        int index = 0;
+
+        for (int col = 1; col <= columns; col++)
+        {
+            int currentOrder = orderMap[col];
+
+            for (int row = 0; row < rows; row++)
+            {
+                matrix[row, currentOrder] = removedSpace[index++];
+            }
+        }
+
+        StringBuilder result = new();
+
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                result.Append(matrix[row, col]);
+            }
+        }
+
+        return result.ToString();
+
+    }
+
     public static Dictionary<int, int> ParseKey(string key)
     {
         HashSet<int> set = new();

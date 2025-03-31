@@ -54,4 +54,16 @@ public sealed class TestColumnarTransposition
 
         Assert.AreEqual(expected, actual);
     }
+
+    [TestMethod]
+    public void Test_Decript()
+    {
+        string cipherText = "TTNAAPTMTSUOAODWCOIXKNLYPETZ";
+        string key = "4312567";
+        string expected = "ATTACKPOSTPONEDUNTILTWOAMXYZ";
+
+        string actual = ColumnarTransposition.Decrypt(cipherText, key);
+
+        Assert.AreEqual(expected, actual);
+    }
 }
