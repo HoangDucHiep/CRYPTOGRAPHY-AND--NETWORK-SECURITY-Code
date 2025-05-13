@@ -26,11 +26,12 @@ public class CustomAlphabet
     public int AlphabetLength() => alphabet.Length;
 
     public int GetIndex(char c) => alphabet.IndexOf(GetLowerInvariant(c));
-    public char GetChar(int index) => alphabet[MyMath.Math.Mod(index, alphabet.Length)];
 
-    public char GetUpperInvariant(char c) => char.ToUpperInvariant(c);
+    public char GetChar(long index) => alphabet[(int)ModulusMath.Mod(index, alphabet.Length)];
 
     public char GetLowerInvariant(char c) => char.ToLowerInvariant(c);
+
+    public char GetUpperInvariant(char c) => char.ToUpperInvariant(c);
 
     public string GetAlphabet(bool uppercase = false) => uppercase ? this.uppercase : alphabet;
 
@@ -54,10 +55,10 @@ public class CustomAlphabet
 
         string sortedAlphabet = string.Concat(alphabet.OrderBy(c => c));
         string sortedOtherAlphabet = string.Concat(other.alphabet.OrderBy(c => c));
-        
+
         return sortedAlphabet.Equals(sortedOtherAlphabet);
     }
-    
+
     // override object.GetHashCode
     public override int GetHashCode()
     {

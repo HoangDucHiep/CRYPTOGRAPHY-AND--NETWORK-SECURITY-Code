@@ -21,7 +21,7 @@ public class MonoAlphabetic
             throw new ArgumentException("Cipher alphabet must not be empty.");
         }
 
-        if (!MyMath.Math.isPermutation([.. alphabet], [.. cipherAlphabet]))
+        if (!MyMath.ModulusMath.isPermutation([.. alphabet], [.. cipherAlphabet]))
         {
             throw new ArgumentException("Alphabet and cipher alphabet must be permutation of each other.");
         }

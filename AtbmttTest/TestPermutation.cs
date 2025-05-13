@@ -1,6 +1,6 @@
 using Atbmtt.ClassicalEncription;
 using Atbmtt.Utils;
-using Math = Atbmtt.MyMath.Math;
+using ModulusMath = Atbmtt.MyMath.ModulusMath;
 
 namespace AtbmttTest
 {
@@ -12,7 +12,7 @@ namespace AtbmttTest
         {
             int[] a = { 1, 2, 3, 4, 5 };
             int[] b = { 1, 2, 3, 4, 5 };
-            Assert.IsTrue(Math.isPermutation(a, b));
+            Assert.IsTrue(ModulusMath.isPermutation(a, b));
         }
 
         [TestMethod]
@@ -20,7 +20,7 @@ namespace AtbmttTest
         {
             int[] a = { 1, 2, 3, 4, 5 };
             int[] b = { 1, 3, 4, 2, 5 };
-            Assert.IsTrue(Math.isPermutation(a, b));
+            Assert.IsTrue(ModulusMath.isPermutation(a, b));
         }
 
         [TestMethod]
@@ -28,7 +28,7 @@ namespace AtbmttTest
         {
             int[] a = { 1, 2, 3, 4, 5 };
             int[] b = { 1, 3, 4, 2 };
-            Assert.IsFalse(Math.isPermutation(a, b));
+            Assert.IsFalse(ModulusMath.isPermutation(a, b));
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace AtbmttTest
         {
             string[] a = { "a", "b", "c", "d", "e" };
             string[] b = { "a", "b", "c", "d", "e" };
-            Assert.IsTrue(Math.isPermutation(a, b));
+            Assert.IsTrue(ModulusMath.isPermutation(a, b));
         }
 
         [TestMethod]
@@ -44,7 +44,7 @@ namespace AtbmttTest
         {
             string[] a = { "a", "b", "c", "d", "e" };
             string[] b = { "a", "c", "d", "b", "e" };
-            Assert.IsTrue(Math.isPermutation(a, b));
+            Assert.IsTrue(ModulusMath.isPermutation(a, b));
         }
 
         [TestMethod]
@@ -52,7 +52,7 @@ namespace AtbmttTest
         {
             string[] a = { "a", "b", "c", "d", "e" };
             string[] b = { "a", "c", "d", "b" };
-            Assert.IsFalse(Math.isPermutation(a, b));
+            Assert.IsFalse(ModulusMath.isPermutation(a, b));
         }
 
         [TestMethod]
@@ -60,7 +60,7 @@ namespace AtbmttTest
         {
             CustomAlphabet[] a = { new CustomAlphabet("abc"), new CustomAlphabet("def") };
             CustomAlphabet[] b = { new CustomAlphabet("abc"), new CustomAlphabet("def") };
-            Assert.IsTrue(Math.isPermutation(a, b));
+            Assert.IsTrue(ModulusMath.isPermutation(a, b));
         }
 
         [TestMethod]
@@ -68,7 +68,7 @@ namespace AtbmttTest
         {
             CustomAlphabet[] a = { new CustomAlphabet("abc"), new CustomAlphabet("def") };
             CustomAlphabet[] b = { new CustomAlphabet("def"), new CustomAlphabet("abc") };
-            Assert.IsTrue(Math.isPermutation(a, b));
+            Assert.IsTrue(ModulusMath.isPermutation(a, b));
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@ namespace AtbmttTest
         {
             string a = "abcdefghijklmnopqrstuvwxyz";
             string b = "zyxwvutsrqponmlkjihgfedcba";
-            Assert.IsTrue(Math.isPermutation<char>(a.ToArray(), b.ToArray()));
+            Assert.IsTrue(ModulusMath.isPermutation<char>(a.ToArray(), b.ToArray()));
         }
     }
 }

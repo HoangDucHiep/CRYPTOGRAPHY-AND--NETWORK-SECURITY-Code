@@ -1,7 +1,23 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\",
+  "WorkspaceRootPath": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\",
   "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\mymath\\modulusmath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:mymath\\modulusmath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\utils\\customalphabet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:utils\\customalphabet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\classicalencription\\extendedvinegerecipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:classicalencription\\extendedvinegerecipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\classicalencription\\extendedcaesarcipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:classicalencription\\extendedcaesarcipher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
     {
       "AbsoluteMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|d:\\university\\antoanbaomattt\\thuchanh\\atbmtt\\classicalencription\\vigenere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3401861E-2A2A-4888-AC74-8EB6F0001917}|Atbmtt.csproj|solutionrelative:classicalencription\\vigenere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -29,7 +45,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -81,24 +97,76 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExtendedVinegereCipher.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\ClassicalEncription\\ExtendedVinegereCipher.cs",
+              "RelativeDocumentMoniker": "ClassicalEncription\\ExtendedVinegereCipher.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\ClassicalEncription\\ExtendedVinegereCipher.cs",
+              "RelativeToolTip": "ClassicalEncription\\ExtendedVinegereCipher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:59:12.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExtendedCaesarCipher.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\ClassicalEncription\\ExtendedCaesarCipher.cs",
+              "RelativeDocumentMoniker": "ClassicalEncription\\ExtendedCaesarCipher.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\ClassicalEncription\\ExtendedCaesarCipher.cs",
+              "RelativeToolTip": "ClassicalEncription\\ExtendedCaesarCipher.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAswB8AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:59:11.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomAlphabet.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Utils\\CustomAlphabet.cs",
+              "RelativeDocumentMoniker": "Utils\\CustomAlphabet.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Utils\\CustomAlphabet.cs",
+              "RelativeToolTip": "Utils\\CustomAlphabet.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:58:44.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ModulusMath.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\MyMath\\ModulusMath.cs",
+              "RelativeDocumentMoniker": "MyMath\\ModulusMath.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\MyMath\\ModulusMath.cs",
+              "RelativeToolTip": "MyMath\\ModulusMath.cs",
+              "ViewState": "AgIAAEcBAAAAAAAAAAAowFMBAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:51:24.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Vigenere.cs",
-              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\ClassicalEncription\\Vigenere.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\ClassicalEncription\\Vigenere.cs",
               "RelativeDocumentMoniker": "ClassicalEncription\\Vigenere.cs",
-              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\ClassicalEncription\\Vigenere.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\ClassicalEncription\\Vigenere.cs",
               "RelativeToolTip": "ClassicalEncription\\Vigenere.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAAB8AAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwB8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T11:42:52.289Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "CharExtensions.cs",
-              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Utils\\CharExtensions.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Utils\\CharExtensions.cs",
               "RelativeDocumentMoniker": "Utils\\CharExtensions.cs",
-              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Utils\\CharExtensions.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Utils\\CharExtensions.cs",
               "RelativeToolTip": "Utils\\CharExtensions.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAUwAgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -106,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "TestCaesarCipher.cs",
               "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\AtbmttTest\\TestCaesarCipher.cs",
               "RelativeDocumentMoniker": "..\\AtbmttTest\\TestCaesarCipher.cs",
@@ -114,16 +182,15 @@
               "RelativeToolTip": "..\\AtbmttTest\\TestCaesarCipher.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T03:59:53.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T03:59:53.708Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Atbmtt.csproj",
-              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Atbmtt.csproj",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Atbmtt.csproj",
               "RelativeDocumentMoniker": "Atbmtt.csproj",
-              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Atbmtt.csproj",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Atbmtt.csproj",
               "RelativeToolTip": "Atbmtt.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -131,11 +198,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Program.cs",
+              "DocumentMoniker": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Program.cs",
+              "ToolTip": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

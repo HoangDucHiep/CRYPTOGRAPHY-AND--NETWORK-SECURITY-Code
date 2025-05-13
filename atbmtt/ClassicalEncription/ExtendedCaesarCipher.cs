@@ -1,6 +1,6 @@
 using System.Text;
-using Atbmtt.Utils;
 using Atbmtt.MyMath;
+using Atbmtt.Utils;
 
 namespace Atbmtt.ClassicalEncription;
 
@@ -22,7 +22,7 @@ public class ExtendedCaesarCipher
             if (alphabet.IsLetter(c))
             {
                 var currentPlainIndex = alphabet.GetIndex(c);
-                var encodedIndex = MyMath.Math.Mod(
+                var encodedIndex = MyMath.ModulusMath.Mod(
                     currentPlainIndex + key,
                     alphabet.AlphabetLength()
                 );
@@ -50,7 +50,7 @@ public class ExtendedCaesarCipher
             if (alphabet.IsLetter(c))
             {
                 var currentCipherIndex = alphabet.GetIndex(c);
-                var encodedIndex = MyMath.Math.Mod(
+                var encodedIndex = MyMath.ModulusMath.Mod(
                     currentCipherIndex - key,
                     alphabet.AlphabetLength()
                 );

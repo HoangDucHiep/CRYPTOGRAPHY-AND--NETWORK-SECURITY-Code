@@ -1,11 +1,11 @@
 namespace Atbmtt.MyMath;
 
-public class Math
+public class ModulusMath
 {
-    public static int ModExpChineseRemainder(int baseValue, int exponent, int modulus)
+    public static long ModExpChineseRemainder(long baseValue, long exponent, long modulus)
     {
-        int M = modulus;
-        int[] msValue = PrimeFactorize(M).Select(f => Power(f.Key, f.Value)).ToArray();
+        long M = modulus;
+        long[] msValue = PrimeFactorize(M).Select(f => Power(f.Key, f.Value)).ToArray();
 
         if (ArePairwiseRelativelyPrime(msValue) == false)
         {
@@ -14,15 +14,15 @@ public class Math
             );
         }
 
-        int[] csValue = new int[msValue.Length];
-        int[] asValue = new int[msValue.Length];
-        int[] MsValue = new int[msValue.Length];
+        long[] csValue = new long[msValue.Length];
+        long[] asValue = new long[msValue.Length];
+        long[] MsValue = new long[msValue.Length];
 
-        for (int i = 0; i < msValue.Length; i++)
+        for (long i = 0; i < msValue.Length; i++)
         {
             MsValue[i] = M / msValue[i];
-            int gcd;
-            int? inverse;
+            long gcd;
+            long? inverse;
             (gcd, inverse) = ExtendedEuclidean(MsValue[i], msValue[i]);
 
             if (inverse == null)
@@ -34,9 +34,9 @@ public class Math
             asValue[i] = ModExp(baseValue, exponent, msValue[i]);
         }
 
-        int result = 0;
+        long result = 0;
 
-        for (int i = 0; i < msValue.Length; i++)
+        for (long i = 0; i < msValue.Length; i++)
         {
             result += Mod(asValue[i] * csValue[i], M);
         }
@@ -44,7 +44,7 @@ public class Math
         return Mod(result, M);
     }
 
-    public static int ChineseRemainderTheorem(int[] msValue, int[] asValue)
+    public static long ChineseRemainderTheorem(long[] msValue, long[] asValue)
     {
         if (msValue.Length != asValue.Length)
         {
@@ -56,21 +56,21 @@ public class Math
             throw new ArgumentException("Ms must be pairwise relatively prime.");
         }
 
-        int M = 1;
+        long M = 1;
 
-        foreach (int m in msValue)
+        foreach (long m in msValue)
         {
             M *= m;
         }
 
-        int[] csValue = new int[msValue.Length];
-        int[] MsValue = new int[msValue.Length];
+        long[] csValue = new long[msValue.Length];
+        long[] MsValue = new long[msValue.Length];
 
-        for (int i = 0; i < msValue.Length; i++)
+        for (long i = 0; i < msValue.Length; i++)
         {
             MsValue[i] = M / msValue[i];
-            int gcd;
-            int? inverse;
+            long gcd;
+            long? inverse;
             (gcd, inverse) = ExtendedEuclidean(MsValue[i], msValue[i]);
 
             if (inverse == null)
@@ -81,9 +81,9 @@ public class Math
             csValue[i] = MsValue[i] * inverse.Value;
         }
 
-        int result = 0;
+        long result = 0;
 
-        for (int i = 0; i < msValue.Length; i++)
+        for (long i = 0; i < msValue.Length; i++)
         {
             result += Mod(asValue[i] * csValue[i], M);
         }
@@ -91,7 +91,7 @@ public class Math
         return Mod(result, M);
     }
 
-    public static int Mod(int a, int b)
+    public static long Mod(long a, long b)
     {
         if (b == 0)
         {
@@ -102,6 +102,7 @@ public class Math
     }
 
     public static bool isPermutation<T>(IList<T> a, IList<T> b)
+        where T : notnull
     {
         if (ReferenceEquals(a, b))
         {
@@ -113,7 +114,7 @@ public class Math
             return false;
         }
 
-        Dictionary<T, int> elementCounts = new();
+        Dictionary<T, long> elementCounts = new();
 
         foreach (T element in a)
         {
@@ -145,7 +146,7 @@ public class Math
         return true;
     }
 
-    public static int ModExp(int a, int m, int n)
+    public static long ModExp(long a, long m, long n)
     {
         if (n == 0)
         {
@@ -179,11 +180,11 @@ public class Math
             return a;
         }
 
-        if (m >= n)
+        /* if (m >= n)
         {
             try
             {
-                int? tryFermat = Math.Fermat(a, m, n);
+                long? tryFermat = ModulusMath.Ferma(a, m, n);
                 if (tryFermat != null)
                 {
                     return tryFermat.Value;
@@ -196,7 +197,7 @@ public class Math
 
             try
             {
-                int? tryEuler = Math.Euler(a, m, n);
+                long? tryEuler = ModulusMath.Euler(a, m, n);
                 if (tryEuler != null)
                 {
                     return tryEuler.Value;
@@ -206,32 +207,48 @@ public class Math
             {
                 // ignore
             }
-        }
+        }   
+        long[] msValue = PrimeFactorize(m).Select(f => Power(f.Key, f.Value)).ToArray();
+        if (ArePairwiseRelativelyPrime(msValue))
+        {
+            try
+            {
+                long? tryCRT = ModulusMath.ModExpChineseRemainder(a, m, n);
+                if (tryCRT != null)
+                {
+                    return tryCRT.Value;
+                }
+            }
+            catch
+            {
+                // ignore
+            }
+        } */
 
-        int result = 1;
+        long result = 1;
 
-        int baseValue = a;
+        long baseValue = a;
 
-        int exponent = m;
+        long exponent = m;
 
-        int tableSize = (int)System.Math.Ceiling(System.Math.Log2(m) + 1);
-        int[] mulTable = new int[tableSize];
+        long tableSize = (long)System.Math.Ceiling(System.Math.Log2(m) + 1);
+        long[] mulTable = new long[tableSize];
 
         mulTable[0] = baseValue;
 
-        for (int i = 1; i < tableSize; i++)
+        for (long i = 1; i < tableSize; i++)
         {
             mulTable[i] = Mod(mulTable[i - 1] * mulTable[i - 1], n);
         }
 
-        for (int i = tableSize - 1; i >= 0; i--)
+        for (long i = tableSize - 1; i >= 0; i--)
         {
             if (exponent == 0)
             {
                 break;
             }
 
-            int power = Power(2, i);
+            long power = Power(2, i);
 
             if (exponent >= power)
             {
@@ -243,16 +260,16 @@ public class Math
         return result;
     }
 
-    public static int Power(int baseNum, int exp)
+    public static long Power(long baseNum, long exp)
     {
         if (exp < 0)
         {
             throw new ArgumentException("Exponent must be non-negative.");
         }
 
-        int result = 1;
+        long result = 1;
 
-        for (int i = 0; i < exp; i++)
+        for (long i = 0; i < exp; i++)
         {
             result *= baseNum;
         }
@@ -260,7 +277,7 @@ public class Math
         return result;
     }
 
-    public static int GCD(int a, int b)
+    public static long GCD(long a, long b)
     {
         if (b == 0)
         {
@@ -270,11 +287,11 @@ public class Math
         return GCD(b, a % b);
     }
 
-    public static (int GDC, int? Inverse) ExtendedEuclidean(int val, int mod)
+    public static (long GDC, long? Inverse) ExtendedEuclidean(long val, long mod)
     {
         val = Mod(val, mod);
 
-        int Q,
+        long Q,
             A1,
             A2,
             B1,
@@ -315,12 +332,12 @@ public class Math
         throw new Exception("Unexpected case in Extended Euclidean algorithm.");
     }
 
-    public static bool IsRelativelyPrime(int a, int b)
+    public static bool IsRelativelyPrime(long a, long b)
     {
         return GCD(a, b) == 1;
     }
 
-    public static int? Fermat(int baseValue, int exponent, int modulus)
+    public static long? Ferma(long baseValue, long exponent, long modulus)
     {
         if (IsPrime(modulus) == false)
         {
@@ -339,11 +356,11 @@ public class Math
             throw new ArgumentException("Exponent must be non-negative.");
         }
 
-        baseValue = Mod(baseValue, modulus); // reduce baseValue modulo modulus
+        baseValue = Mod(baseValue, modulus); 
 
         if (IsRelativelyPrime(baseValue, modulus))
         {
-            int temp = Mod(exponent, modulus - 1);
+            long temp = Mod(exponent, modulus - 1);
             if (temp == 0)
             {
                 return 1;
@@ -365,7 +382,7 @@ public class Math
                     "Fermat theorem is not applicable for the given parameters."
                 );
             }
-            int temp = Mod(exponent, modulus);
+            long temp = Mod(exponent, modulus);
 
             if (temp == 0)
             {
@@ -379,18 +396,18 @@ public class Math
             {
                 long part1 = ModExp(
                     baseValue,
-                    (int)System.Math.Floor((double)exponent / modulus),
+                    (long)System.Math.Floor((double)exponent / modulus),
                     modulus
                 );
 
                 long part2 = ModExp(baseValue, temp, modulus);
-                long result = Mod((int)(part1 * part2), modulus);
-                return (int)result;
+                long result = Mod((long)(part1 * part2), modulus);
+                return (long)result;
             }
         }
     }
 
-    public static int? Euler(int baseValue, int exponent, int modulus)
+    public static long? Euler(long baseValue, long exponent, long modulus)
     {
         if (baseValue < 0 || modulus <= 0)
         {
@@ -406,7 +423,7 @@ public class Math
 
         baseValue = Mod(baseValue, modulus);
 
-        int eulerTotient = EulerTotient(modulus);
+        long eulerTotient = EulerTotient(modulus);
 
         if (IsRelativelyPrime(baseValue, modulus))
         {
@@ -416,7 +433,7 @@ public class Math
                     "Euler theorem is not applicable for the given parameters."
                 );
             }
-            int temp = Mod(exponent, eulerTotient);
+            long temp = Mod(exponent, eulerTotient);
 
             if (temp == 0)
             {
@@ -439,7 +456,7 @@ public class Math
                     "Euler theorem is not applicable for the given parameters."
                 );
             }
-            int temp = Mod(exponent, eulerTotient + 1);
+            long temp = Mod(exponent, eulerTotient + 1);
 
             if (temp == 0)
             {
@@ -449,17 +466,17 @@ public class Math
             {
                 long part1 = ModExp(
                     baseValue,
-                    (int)System.Math.Floor((double)exponent / (eulerTotient + 1)),
+                    (long)System.Math.Floor((double)exponent / (eulerTotient + 1)),
                     modulus
                 );
                 long part2 = ModExp(baseValue, temp, modulus);
-                long result = Mod((int)(part1 * part2), modulus);
-                return (int)result;
+                long result = Mod((long)(part1 * part2), modulus);
+                return (long)result;
             }
         }
     }
 
-    public static bool IsPrime(int number)
+    public static bool IsPrime(long number)
     {
         if (number <= 3)
         {
@@ -471,7 +488,7 @@ public class Math
             return false;
         }
 
-        for (int i = 5; i * i <= number; i += 6)
+        for (long i = 5; i * i <= number; i += 6)
         {
             if (number % i == 0 || number % (i + 2) == 0)
             {
@@ -481,11 +498,11 @@ public class Math
         return true;
     }
 
-    public static int EulerTotient(int n)
+    public static long EulerTotient(long n)
     {
         if (n < 1)
         {
-            throw new ArgumentException("n must be a positive integer.");
+            throw new ArgumentException("n must be a positive longeger.");
         }
 
         if (n == 1)
@@ -498,20 +515,20 @@ public class Math
             return n - 1;
         }
 
-        int[] primes = EratosthenesSieve(n);
+        long[] primes = EratosthenesSieve(n);
 
-        Dictionary<int, int> primeFactors = PrimeFactorize(n);
+        Dictionary<long, long> primeFactors = PrimeFactorize(n);
 
         if (primeFactors.Count == 1 && IsPrime(primeFactors.Keys.First()))
         {
-            int num = primeFactors.Keys.First();
-            int exponent = primeFactors[num];
+            long num = primeFactors.Keys.First();
+            long exponent = primeFactors[num];
             return Power(num, exponent) - Power(num, exponent - 1);
         }
 
         bool IsPrimeFactors = true;
 
-        foreach (int prime in primeFactors.Keys)
+        foreach (long prime in primeFactors.Keys)
         {
             if (primeFactors[prime] > 1)
             {
@@ -522,36 +539,36 @@ public class Math
 
         if (IsPrimeFactors)
         {
-            int result = 1;
-            foreach (int prime in primeFactors.Keys)
+            long result = 1;
+            foreach (long prime in primeFactors.Keys)
             {
                 result *= prime - 1;
             }
             return result;
         }
 
-        int res = 1;
-        foreach (int key in primeFactors.Keys)
+        long res = 1;
+        foreach (long key in primeFactors.Keys)
         {
-            int num = Power(key, primeFactors[key]);
+            long num = Power(key, primeFactors[key]);
             res *= EulerTotient(num);
         }
 
         return res;
     }
 
-    public static Dictionary<int, int> PrimeFactorize(int n)
+    public static Dictionary<long, long> PrimeFactorize(long n)
     {
         if (n < 2)
             throw new ArgumentException("n must be greater than 1.");
 
-        int limit = (int)System.Math.Floor(System.Math.Sqrt(n));
-        int[] primes = EratosthenesSieve(limit);
+        long limit = (long)System.Math.Floor(System.Math.Sqrt(n));
+        long[] primes = EratosthenesSieve(limit);
 
-        Dictionary<int, int> factors = new();
-        int temp = n;
+        Dictionary<long, long> factors = new();
+        long temp = n;
 
-        foreach (int p in primes)
+        foreach (long p in primes)
         {
             while (temp % p == 0)
             {
@@ -573,11 +590,11 @@ public class Math
         return factors;
     }
 
-    public static bool ArePairwiseRelativelyPrime(int[] numbers)
+    public static bool ArePairwiseRelativelyPrime(long[] numbers)
     {
-        for (int i = 0; i < numbers.Length; i++)
+        for (long i = 0; i < numbers.Length; i++)
         {
-            for (int j = i + 1; j < numbers.Length; j++)
+            for (long j = i + 1; j < numbers.Length; j++)
             {
                 if (GCD(numbers[i], numbers[j]) != 1)
                 {
@@ -588,32 +605,32 @@ public class Math
         return true;
     }
 
-    public static int[] EratosthenesSieve(int n)
+    public static long[] EratosthenesSieve(long n)
     {
         if (n < 2)
         {
-            return Array.Empty<int>();
+            return Array.Empty<long>();
         }
 
         bool[] isPrime = new bool[n + 1];
-        for (int i = 2; i <= n; i++)
+        for (long i = 2; i <= n; i++)
         {
             isPrime[i] = true;
         }
 
-        for (int i = 2; i * i <= n; i++)
+        for (long i = 2; i * i <= n; i++)
         {
             if (isPrime[i])
             {
-                for (int j = i * i; j <= n; j += i)
+                for (long j = i * i; j <= n; j += i)
                 {
                     isPrime[j] = false;
                 }
             }
         }
 
-        List<int> primes = new();
-        for (int i = 2; i <= n; i++)
+        List<long> primes = new();
+        for (long i = 2; i <= n; i++)
         {
             if (isPrime[i])
             {
@@ -624,7 +641,7 @@ public class Math
         return primes.ToArray();
     }
 
-    public static bool IsPrimitiveRoot(int a, int n)
+    public static bool IsPrimitiveRoot(long a, long n)
     {
         if (a < 1 || n < 2)
         {
@@ -636,11 +653,11 @@ public class Math
             return false;
         }
 
-        int phi = EulerTotient(n);
-        int[] primeFactors = PrimeFactorize(phi).Keys.ToArray();
-        List<int> allDividers = new List<int>(primeFactors);
+        long phi = EulerTotient(n);
+        long[] primeFactors = PrimeFactorize(phi).Keys.ToArray();
+        List<long> allDividers = new List<long>(primeFactors);
 
-        for (int i = 0; i < primeFactors.Length; i++)
+        for (long i = 0; i < primeFactors.Length; i++)
         {
             allDividers.Add(phi / primeFactors[i]);
         }
@@ -648,7 +665,7 @@ public class Math
         allDividers.Sort();
         allDividers = allDividers.Distinct().ToList();
 
-        foreach (int d in allDividers)
+        foreach (long d in allDividers)
         {
             if (ModExp(a, d, n) == 1)
             {
@@ -659,11 +676,11 @@ public class Math
         return true;
     }
 
-    public static int DiscreteLogarithm(int baseVal, int elem, int mod)
+    public static long DiscreteLogarithm(long baseVal, long elem, long mod)
     {
         if (baseVal < 1 || elem < 1 || mod < 2)
         {
-            throw new ArgumentException("Base, element, and modulus must be positive integers.");
+            throw new ArgumentException("Base, element, and modulus must be positive longegers.");
         }
 
         if (baseVal >= mod || elem >= mod)
@@ -676,7 +693,7 @@ public class Math
             throw new ArgumentException("Modulus must be a prime number.");
         }
 
-        int i = 1;
+        long i = 1;
         do
         {
             if (ModExp(baseVal, i, mod) == elem)
@@ -689,36 +706,36 @@ public class Math
         throw new ArgumentException("No discrete logarithm found.");
     }
 
-    public static int A1(int a, int b, int x, int y, int n)
+    public static long A1(long a, long b, long x, long y, long n)
     {
-        int first = ModExp(a, x, n);
-        int second = ModExp(b, y, n);
+        long first = ModExp(a, x, n);
+        long second = ModExp(b, y, n);
 
         return Mod(first + second, n);
     }
 
-    public static int A2(int a, int b, int x, int y, int n)
+    public static long A2(long a, long b, long x, long y, long n)
     {
-        int first = ModExp(a, x, n);
-        int second = ModExp(b, y, n);
+        long first = ModExp(a, x, n);
+        long second = ModExp(b, y, n);
 
         return Mod(first - second, n);
     }
 
-    public static int A3(int a, int b, int x, int y, int n)
+    public static long A3(long a, long b, long x, long y, long n)
     {
-        int first = ModExp(a, x, n);
-        int second = ModExp(b, y, n);
+        long first = ModExp(a, x, n);
+        long second = ModExp(b, y, n);
 
         return Mod(first * second, n);
     }
 
-    public static int A4(int b, int y, int n)
+    public static long A4(long b, long y, long n)
     {
-        int first = ModExp(b, y, n);
+        long first = ModExp(b, y, n);
 
-        int gcd;
-        int? inverse;
+        long gcd;
+        long? inverse;
         (gcd, inverse) = ExtendedEuclidean(first, n);
         if (inverse == null)
         {
@@ -728,10 +745,10 @@ public class Math
         return inverse.Value;
     }
 
-    public static int A5(int a, int b, int x, int y, int n)
+    public static long A5(long a, long b, long x, long y, long n)
     {
-        int first = ModExp(a, x, n);
-        int second = A4(b, y, n);
+        long first = ModExp(a, x, n);
+        long second = A4(b, y, n);
 
         return Mod(first * second, n);
     }

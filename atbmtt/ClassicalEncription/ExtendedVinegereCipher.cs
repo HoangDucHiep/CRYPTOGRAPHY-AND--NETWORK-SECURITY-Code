@@ -4,19 +4,9 @@ using Atbmtt.Utils;
 
 namespace Atbmtt.ClassicalEncription;
 
-/// <summary>
-/// Specifies the mode of operation for the Vigenere cipher.
-/// </summary>
 public enum VigenereMode
 {
-    /// <summary>
-    /// Uses the key repeatedly to encrypt/decrypt the entire message.
-    /// </summary>
     REPEAT_KEY,
-
-    /// <summary>
-    /// Uses the key concatenated with the plaintext as the encryption key.
-    /// </summary>
     AUTOKEY,
 }
 
@@ -59,10 +49,10 @@ public class ExtendedVinegereCipher
 
             if (alphabet.IsLetter(currentPlainChar))
             {
-                int currentPlainIndex = alphabet.GetIndex(currentPlainChar);
-                int currentKeyIndex = alphabet.GetIndex(currentKeyChar);
+                long currentPlainIndex = alphabet.GetIndex(currentPlainChar);
+                long currentKeyIndex = alphabet.GetIndex(currentKeyChar);
 
-                int encodedIndex = MyMath.Math.Mod(
+                long encodedIndex = MyMath.ModulusMath.Mod(
                     currentPlainIndex + currentKeyIndex,
                     alphabet.AlphabetLength()
                 );
@@ -133,8 +123,6 @@ public class ExtendedVinegereCipher
         int cIndex = 0;
         int cLength = cipherText.Length;
 
-        //now the processed key to decrypt the cipher text contain the key and the plain text
-        // we need to restore the key and the plain text simultaneously
         while (cIndex < cLength)
         {
             string restoredKey = RestoreAutoKey(key + plainText.ToString(), cipherText);
@@ -196,10 +184,13 @@ public class ExtendedVinegereCipher
 
     private char DecodeChar(char cipherChar, char keyChar)
     {
-        int cipherIndex = alphabet.GetIndex(cipherChar);
-        int keyIndex = alphabet.GetIndex(keyChar);
+        long cipherIndex = alphabet.GetIndex(cipherChar);
+        long keyIndex = alphabet.GetIndex(keyChar);
 
-        int decodedIndex = MyMath.Math.Mod(cipherIndex - keyIndex, alphabet.AlphabetLength());
+        long decodedIndex = MyMath.ModulusMath.Mod(
+            cipherIndex - keyIndex,
+            alphabet.AlphabetLength()
+        );
 
         return alphabet.GetChar(decodedIndex);
     }
@@ -237,7 +228,7 @@ public class ExtendedVinegereCipher
         int keyLength = key.Length;
         int plainTextLength = plainText.Length;
 
-        int index = 0; // use to loop through the key
+        int index = 0;
         int plainIndex = 0;
 
         while (index < keyLength)
@@ -249,13 +240,13 @@ public class ExtendedVinegereCipher
             }
             else
             {
-                _ = autoKey.Append(' ');
+                _ = autoKey.Append(plainText[plainIndex]);
             }
 
             plainIndex++;
         }
 
-        index = 0; // now use to loop through the plain text
+        index = 0;
         while (plainIndex < plainTextLength)
         {
             if (!alphabet.IsLetter(plainText[plainIndex]))

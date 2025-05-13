@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Atbmtt.csproj": {}
+    "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Atbmtt.csproj": {}
   },
   "projects": {
-    "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Atbmtt.csproj": {
+    "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Atbmtt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Atbmtt.csproj",
+        "projectUniqueName": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Atbmtt.csproj",
         "projectName": "Atbmtt",
-        "projectPath": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\Atbmtt.csproj",
+        "projectPath": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\Atbmtt.csproj",
         "packagesPath": "C:\\Users\\HoangHiep\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\atbmtt\\obj\\",
+        "outputPath": "D:\\University\\AnToanBaoMatTT\\THUCHANH\\Atbmtt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

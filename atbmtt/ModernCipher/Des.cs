@@ -1,3 +1,6 @@
+using System.Text;
+using Atbmtt.Utils;
+
 namespace Atbmtt.ModernCipher;
 
 public class Des
@@ -424,8 +427,67 @@ public class Des
 
     private static readonly byte[][][] SBoxes = new byte[8][][] { S1, S2, S3, S4, S5, S6, S7, S8 };
 
-    public static byte[] Encript(byte[] message, byte[] key)
+    public static Dictionary<char, byte[]> HexToBin = new Dictionary<char, byte[]>()
     {
+        { '0', [0, 0, 0, 0] },
+        { '1', [0, 0, 0, 1] },
+        { '2', [0, 0, 1, 0] },
+        { '3', [0, 0, 1, 1] },
+        { '4', [0, 1, 0, 0] },
+        { '5', [0, 1, 0, 1] },
+        { '6', [0, 1, 1, 0] },
+        { '7', [0, 1, 1, 1] },
+        { '8', [1, 0, 0, 0] },
+        { '9', [1, 0, 0, 1] },
+        { 'A', [1, 0, 1, 0] },
+        { 'B', [1, 0, 1, 1] },
+        { 'C', [1, 1, 0, 0] },
+        { 'D', [1, 1, 0, 1] },
+        { 'E', [1, 1, 1, 0] },
+        { 'F', [1, 1, 1, 1] },
+    };
+
+    public static Dictionary<string, char> BinToHex = new Dictionary<string, char>()
+    {
+        { "0000", '0' },
+        { "0001", '1' },
+        { "0010", '2' },
+        { "0011", '3' },
+        { "0100", '4' },
+        { "0101", '5' },
+        { "0110", '6' },
+        { "0111", '7' },
+        { "1000", '8' },
+        { "1001", '9' },
+        { "1010", 'A' },
+        { "1011", 'B' },
+        { "1100", 'C' },
+        { "1101", 'D' },
+        { "1110", 'E' },
+        { "1111", 'F' },
+    };
+
+    public static string Encrypt(string MHex, string keyHex)
+    {
+        MHex.RemoveWhitespace();
+        keyHex.RemoveWhitespace();
+
+        if (MHex.Length != 16 || keyHex.Length != 16)
+        {
+            throw new ArgumentException("Message and key length must be 16 hex characters.");
+        }
+
+        byte[] message = new byte[64];
+        byte[] key = new byte[64];
+
+        for (int i = 0; i < 16; i++)
+        {
+            byte[] bin = HexToBin[MHex[i]];
+            Array.Copy(bin, 0, message, i * 4, 4);
+            bin = HexToBin[keyHex[i]];
+            Array.Copy(bin, 0, key, i * 4, 4);
+        }
+
         if (message.Length != 64)
         {
             throw new ArgumentException("Message length must be 64 bits.");
@@ -436,14 +498,27 @@ public class Des
             throw new ArgumentException("Key length must be 64 bits.");
         }
 
-        byte[] permutedMessage = GetInitialPermutation(message);
         byte[] CnDn = GetPC1Permutation(key);
-        byte[][] keys = GetAllShiftedKeys(CnDn);
-        byte[][] permutedKeys = GetAllPC2Permutation(keys);
+        Console.WriteLine("\n=======================\nCnDn");
 
+        Display(CnDn, 7);
+        byte[][] keys = GetAllShiftedKeys(CnDn);
+        Console.WriteLine("\n=======================\nShifted Keys");
+        DisplayAll(keys, 7);
+        byte[][] permutedKeys = GetAllPC2Permutation(keys);
+        Console.WriteLine("\n=======================\nPermuted Keys");
+        DisplayAll(permutedKeys, 7);
+
+        byte[] permutedMessage = GetInitialPermutation(message);
+        Console.WriteLine("\n=======================\nPermuted Message");
+        Display(permutedMessage, 6);
         byte[] leftHalf,
             rightHalf;
         (leftHalf, rightHalf) = SplitHalf(permutedMessage);
+        Console.WriteLine("\n=======================\nLeft Half 0");
+        Display(leftHalf, 6);
+        Console.WriteLine("\nRight Half 0");
+        Display(rightHalf, 6);
 
         for (int i = 0; i < 16; i++)
         {
@@ -451,10 +526,107 @@ public class Des
             byte[] xorResult = XOR(leftHalf, fFunctionResult);
             leftHalf = rightHalf;
             rightHalf = xorResult;
+
+            Console.WriteLine("\n=======================\nLeft Half " + (i + 1));
+            Display(leftHalf, 6);
+            Console.WriteLine("\nRight Half " + (i + 1));
+            Display(rightHalf, 6);
         }
 
         byte[] combinedResult = MergeHalves(rightHalf, leftHalf);
-        return GetIPInverse(combinedResult);
+        Console.WriteLine("\n=======================\nCombined Result R16-L16");
+        Display(combinedResult, 8);
+
+        byte[] IpInverse = GetIPInverse(combinedResult);
+        Console.WriteLine("\n=======================\nIP Inverse");
+        Display(IpInverse, 8);
+        Console.WriteLine("\n");
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 16; i++)
+        {
+            sb.Append(
+                BinToHex[
+                    IpInverse[i * 4]
+                        + ""
+                        + IpInverse[i * 4 + 1]
+                        + ""
+                        + IpInverse[i * 4 + 2]
+                        + ""
+                        + IpInverse[i * 4 + 3]
+                ]
+            );
+        }
+        return sb.ToString();
+    }
+
+    public static string Decrypt(string MHex, string keyHex)
+    {
+        MHex.RemoveWhitespace();
+        keyHex.RemoveWhitespace();
+
+        if (MHex.Length != 16 || keyHex.Length != 16)
+        {
+            throw new ArgumentException("Message and key length must be 16 hex characters.");
+        }
+
+        byte[] message = new byte[64];
+        byte[] key = new byte[64];
+
+        for (int i = 0; i < 16; i++)
+        {
+            byte[] bin = HexToBin[MHex[i]];
+            Array.Copy(bin, 0, message, i * 4, 4);
+            bin = HexToBin[keyHex[i]];
+            Array.Copy(bin, 0, key, i * 4, 4);
+        }
+
+        if (message.Length != 64)
+        {
+            throw new ArgumentException("Message length must be 64 bits.");
+        }
+
+        if (key.Length != 64)
+        {
+            throw new ArgumentException("Key length must be 64 bits.");
+        }
+
+        byte[] CnDn = GetPC1Permutation(key);
+        byte[][] keys = GetAllShiftedKeys(CnDn);
+        byte[][] permutedKeys = GetAllPC2Permutation(keys);
+
+        byte[] permutedMessage = GetInitialPermutation(message);
+        byte[] leftHalf,
+            rightHalf;
+        (leftHalf, rightHalf) = SplitHalf(permutedMessage);
+
+        for (int i = 0; i < 16; i++)
+        {
+            byte[] fFunctionResult = GetFFunction(rightHalf, permutedKeys[15 - i]);
+            byte[] xorResult = XOR(leftHalf, fFunctionResult);
+            leftHalf = rightHalf;
+            rightHalf = xorResult;
+        }
+
+        byte[] combinedResult = MergeHalves(rightHalf, leftHalf);
+        byte[] IpInverse = GetIPInverse(combinedResult);
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 16; i++)
+        {
+            sb.Append(
+                BinToHex[
+                    IpInverse[i * 4]
+                        + ""
+                        + IpInverse[i * 4 + 1]
+                        + ""
+                        + IpInverse[i * 4 + 2]
+                        + ""
+                        + IpInverse[i * 4 + 3]
+                ]
+            );
+        }
+        return sb.ToString();
     }
 
     public static byte[] GetIPInverse(byte[] input)
@@ -662,11 +834,7 @@ public class Des
         byte[][] keys = new byte[16][];
         for (int i = 0; i < 16; i++)
         {
-            byte[] permutedKey = GetPC2Permutation(CnDn[i]);
-            for (int j = 0; j < 48; j++)
-            {
-                keys[i] = permutedKey;
-            }
+            keys[i] = GetPC2Permutation(CnDn[i]);
         }
         return keys;
     }
